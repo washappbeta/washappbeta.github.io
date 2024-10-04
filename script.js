@@ -8,7 +8,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
   if (email && password) {
     // Aqui você pode adicionar uma chamada para a API de login
-    window.location.href = "https://eescolaviver.github.io/servicos.html"
+    window.location.href = "https://washappbeta.github.io/servicos.html"
   } else {
     alert('Por favor, preencha os campos!');
   }
