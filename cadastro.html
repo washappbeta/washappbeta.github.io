@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASHAPP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      padding: 0 15px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 350px;
+      padding: 15px;
+      border-radius: 10px;
+      -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
+      -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
+      box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    h2 {
+      font-size: 1.5rem; /* Reduzindo o tamanho do título */
+    }
+
+    .form-label {
+      font-size: 0.9rem; /* Reduzindo o tamanho dos labels */
+    }
+
+    .form-control {
+      font-size: 0.9rem; /* Reduzindo o tamanho do input */
+    }
+
+    button {
+      font-size: 0.9rem; /* Reduzindo o tamanho do botão */
+    }
+
+    .text-center a {
+      font-size: 0.8rem; /* Reduzindo o tamanho do link */
+    }
+
+    .card .mb-3 {
+      margin-bottom: 10px; /* Reduzindo o espaçamento entre os campos */
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-bg">
+      <!-- Espaço para a logo -->
+      <div class="text-center mb-3">
+        <img src="logo.jpeg" alt="Logo" class="logo">
+      </div>
+
+      <h2 class="text-center mb-3">Cadastro</h2>
+      <form id="registerForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="name" placeholder="Seu nome" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Coloque seu email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="password" placeholder="Crie uma senha" required>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirme sua senha</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha" required>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+      </form>
+      <div class="mt-3 text-center">
+        <a href="index.html">Já tem uma conta? Faça login</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

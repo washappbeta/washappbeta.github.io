@@ -1,0 +1,47 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.card {
+  width: 100%;
+  max-width: 350px;
+  padding: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
+  -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
+  box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 1.5rem; /* Reduzindo o tamanho do título */
+}
+
+.form-label {
+  font-size: 0.9rem; /* Reduzindo o tamanho dos labels */
+}
+
+.form-control {
+  font-size: 0.9rem; /* Reduzindo o tamanho do input */
+}
+
+button {
+  font-size: 0.9rem; /* Reduzindo o tamanho do botão */
+}
+
+.text-center a {
+  font-size: 0.8rem; /* Reduzindo o tamanho do link */
+}
+
+.card .mb-3 {
+  margin-bottom: 10px; /* Reduzindo o espaçamento entre os campos */
+}

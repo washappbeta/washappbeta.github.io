@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASHAPP</title>
+  <style>
+    /* Estilos gerais e mobile */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* Menu lateral ajustado para sobrepor o conteúdo */
+    .menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2; /* Coloca o menu acima de todos os elementos */
+      top: 0;
+      left: 0;
+      background-color: #2c5fac; /* Cor azul da marca */
+      overflow-x: hidden;
+      transition: 0.3s; /* Ajuste na velocidade da transição */
+      padding-top: 60px;
+    }
+
+    .menu a {
+      padding: 16px;
+      text-decoration: none;
+      font-size: 14px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+      border-top: 1px solid white;
+    }
+
+    .menu a:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .menu .closebtn {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      font-size: 36px;
+    }
+
+    #main {
+      padding: 16px;
+      /* Removida a transição da margem */
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #2c5fac; /* Azul da marca */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .openbtn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos da primeira tela */
+    .service-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .service-option {
+      text-align: center;
+      width: 90%;
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 2px solid #2c5fac; 
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-option:hover {
+      background-color: #e9f1ff; /* Um tom leve de azul ao passar o mouse */
+      cursor: pointer;
+    }
+
+    .service-option img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c5fac; /* Azul da marca */
+    }
+
+    p {
+      color: #555;
+    }
+
+    /* Ajustando o layout para evitar que o conteúdo seja coberto de forma permanente */
+    .container {
+      position: relative; /* Garantir que o container fique abaixo do menu */
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <div id="myMenu" class="menu">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+    <a href="#">Módulo de Seleção de Serviço</a>
+    <a href="#">Módulo de Agendamento</a>
+    <a href="#">Módulo de Histórico de Agendamentos</a>
+    <a href="#">Módulo de Avaliação e Feedback</a>
+    <a href="#">Módulo de Pagamento</a>
+    <a href="#">Módulo de Notificações</a>
+    <a href="#">Módulo de Geolocalização</a>
+  </div>
+
+  <!-- Botão para abrir o menu -->
+  <div id="main">
+    <button id="menuzinho" class="openbtn" onclick="openMenu()">&#9776; Menu</button>
+
+    <!-- Primeira tela de escolha de serviço -->
+    <div class="container mt-5">
+      <h2>Escolha o Tipo de Serviço</h2>
+      <div class="service-options">
+        <div class="service-option" onclick="location.href='lavagem.html'">
+          <img src="casa-limpa.png" alt="Lavador em Casa">
+          <h4>Lavador em Casa</h4>
+          <p>Solicite um lavador até seu endereço.</p>
+        </div>
+        <div class="service-option" onclick="location.href='lavagem.html'">
+          <img src="lava-jato.png" alt="Lava Car">
+          <h4>Levar ao Lava Car</h4>
+          <p>Encontre os Lava Cars próximos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openMenu() {
+      document.getElementById('menuzinho').style.display = 'none'; /* Esconde o botão do menu */
+      document.getElementById("myMenu").style.width = "250px"; /* Exibe o menu */
+    }
+
+    function closeMenu() {
+      document.getElementById('menuzinho').style.display = 'initial'; /* Mostra o botão do menu novamente */
+      document.getElementById("myMenu").style.width = "0"; /* Fecha o menu */
+    }
+  </script>
+
+</body>
+</html>

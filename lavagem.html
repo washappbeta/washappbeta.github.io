@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASHAPP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1951a5; /* Azul da marca */
+    }
+
+    /* Estilo do campo de endereço */
+    .address-input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #1951a5;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Estilos dos filtros */
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .filter-btn {
+      background-color: #1951a5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .filter-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos da lista de lavadores */
+    .washer-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .washer-item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .washer-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .washer-info {
+      flex-grow: 1;
+    }
+
+    .washer-name {
+      font-size: 16px;
+      color: #1951a5;
+      margin-bottom: 5px;
+    }
+
+    .washer-rating {
+      color: #ffcc00; /* Estrelas de avaliação */
+    }
+
+    .washer-price {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Estilos das estrelas de avaliação */
+    .stars {
+      color: #ffcc00;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* Menu lateral ajustado para sobrepor o conteúdo */
+    .menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2; /* Coloca o menu acima de todos os elementos */
+      top: 0;
+      left: 0;
+      background-color: #2c5fac; /* Cor azul da marca */
+      overflow-x: hidden;
+      transition: 0.3s; /* Ajuste na velocidade da transição */
+      padding-top: 60px;
+    }
+
+    .menu a {
+      padding: 16px;
+      text-decoration: none;
+      font-size: 14px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+      border-top: 1px solid white;
+    }
+
+    .menu a:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .menu .closebtn {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      font-size: 36px;
+    }
+
+    #main {
+      padding: 16px;
+      /* Removida a transição da margem */
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #2c5fac; /* Azul da marca */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .openbtn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilos da primeira tela */
+    .service-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .service-option {
+      text-align: center;
+      width: 90%;
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 2px solid #2c5fac; 
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-option:hover {
+      background-color: #e9f1ff; /* Um tom leve de azul ao passar o mouse */
+      cursor: pointer;
+    }
+
+    .service-option img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c5fac; /* Azul da marca */
+    }
+
+    p {
+      color: #555;
+    }
+
+    /* Ajustando o layout para evitar que o conteúdo seja coberto de forma permanente */
+    .container {
+      position: relative; /* Garantir que o container fique abaixo do menu */
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu lateral -->
+  <div id="myMenu" class="menu">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+    <a href="servicos.html">Módulo de Seleção de Serviço</a>
+    <a href="#">Módulo de Agendamento</a>
+    <a href="#">Módulo de Histórico de Agendamentos</a>
+    <a href="#">Módulo de Avaliação e Feedback</a>
+    <a href="#">Módulo de Pagamento</a>
+    <a href="#">Módulo de Notificações</a>
+    <a href="#">Módulo de Geolocalização</a>
+  </div>
+
+  <!-- Botão para abrir o menu -->
+
+  <div class="container">
+    <button id="menuzinho" class="openbtn" onclick="openMenu()">&#9776; Menu</button>
+
+    <h2>Selecione um Lavador</h2>
+
+    <!-- Campo de endereço -->
+    <input type="text" class="address-input" placeholder="Insira seu endereço" />
+
+    <!-- Filtros de proximidade, preço e avaliação -->
+    <div class="filters">
+      <button class="filter-btn" onclick="filterByProximity()">Proximidade</button>
+      <button class="filter-btn" onclick="filterByPrice()">Preço</button>
+      <button class="filter-btn" onclick="filterByRating()">Avaliação</button>
+    </div>
+
+    <!-- Lista de lavadores -->
+    <ul class="washer-list">
+      <!-- Exemplo de lavador -->
+      <li class="washer-item">
+        <img src="lava1.png" alt="Lavador 1">
+        <div class="washer-info">
+          <span class="washer-name">João Silva</span>
+          <div class="stars">★ ★ ★ ★ ☆</div>
+          <p class="washer-price">R$ 50,00 por serviço</p>
+        </div>
+      </li>
+
+      <li class="washer-item">
+        <img src="lava2.png" alt="Lavador 2">
+        <div class="washer-info">
+          <span class="washer-name">Maria Santos</span>
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <p class="washer-price">R$ 45,00 por serviço</p>
+        </div>
+      </li>
+
+      <li class="washer-item">
+        <img src="lava3.png" alt="Lavador 3">
+        <div class="washer-info">
+          <span class="washer-name">Carlos Pereira</span>
+          <div class="stars">★ ★ ★ ☆ ☆</div>
+          <p class="washer-price">R$ 40,00 por serviço</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Funções de filtro (serão implementadas futuramente)
+    function filterByProximity() {
+      alert("Filtro por proximidade aplicado.");
+    }
+
+    function filterByPrice() {
+      alert("Filtro por preço aplicado.");
+    }
+
+    function filterByRating() {
+      alert("Filtro por avaliação aplicado.");
+    }
+
+    function openMenu() {
+      document.getElementById('menuzinho').style.display = 'none'; /* Esconde o botão do menu */
+      document.getElementById("myMenu").style.width = "250px"; /* Exibe o menu */
+    }
+
+    function closeMenu() {
+      document.getElementById('menuzinho').style.display = 'initial'; /* Mostra o botão do menu novamente */
+      document.getElementById("myMenu").style.width = "0"; /* Fecha o menu */
+    }
+  </script>
+
+
+</body>
+</html>
